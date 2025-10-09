@@ -1,33 +1,66 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: "Arsitektur Sistem Operasi dan Kernel"
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Ikhsan Mu'arif 
+- **NIM**   : 250202921  
+- **Kelas** : 1IKRB
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+Pada praktikum minggu ini, mahasiswa akan mempelajari arsitektur dasar sistem operasi: bagaimana komponen OS bekerja, serta bagaimana interaksi antara user, aplikasi, kernel, dan hardware terjadi.
+
+Mahasiswa juga diperkenalkan pada:
+
+Perbedaan mode eksekusi kernel mode dan user mode.
+Mekanisme system call (panggilan sistem).
+Perbandingan model arsitektur OS seperti monolithic kernel, layered approach, dan microkernel.
+Eksperimen akan dilakukan menggunakan perintah dasar Linux untuk melihat informasi kernel dan modul aktif.
+
+
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. Setup Environment
+Pastikan Linux (Ubuntu/WSL) sudah terinstal.
+Pastikan Git sudah dikonfigurasi dengan benar:
+git config --global user.name "Nama Anda"
+git config --global user.email "email@contoh.com"
+
+2. Diskusi Konsep
+Baca materi pengantar tentang komponen OS.
+Identifikasi komponen yang ada pada Linux/Windows/Android.
+
+3. Eksperimen Dasar Jalankan perintah berikut di terminal:
+uname -a
+whoami
+lsmod | head
+dmesg | head
+Catat dan analisis modul kernel yang tampil.
+
+4. Membuat Diagram Arsitektur
+Buat diagram hubungan antara User → System Call → Kernel → Hardware.
+Gunakan draw.io atau Mermaid.
+Simpan hasilnya di:
+praktikum/week1-intro-arsitektur-os/screenshots/diagram-os.png
+
+5. Penulisan Laporan
+Tuliskan hasil pengamatan, analisis, dan kesimpulan ke dalam laporan.md.
+Tambahkan screenshot hasil terminal ke folder screenshots/.
+6. Commit & Push
+git add .
+git commit -m "Minggu 1 - Arsitektur Sistem Operasi dan Kernel"
+git push origin main
 
 ---
 
@@ -43,20 +76,46 @@ dmesg | head
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](./sreenshot/Linux-1.png)
 
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+- Jelaskan makna hasil percobaan. 
+- makna uname -a
+Laporan ini adalah kartu identitas dari Kernel yang sedang berjalan. Angka versi (misalnya, 5.10.0-23) menunjukkan fungsionalitas dan fitur yang tersedia dalam Kernel tersebut (misalnya, driver apa yang didukung, algoritma scheduler mana yang digunakan, dan bug apa yang sudah diperbaiki)..
+makna whoami
+Laporan ini memberi tahu siapa yang menjalankan perintah, yang secara langsung berkaitan dengan hak akses (privileges) yang dimiliki oleh proses saat ini.
+makna lsmod | head
+Laporan ini adalah daftar modul kernel (driver dan layanan) yang saat ini dimuat dan aktif dalam memori Kernel. Ini menunjukkan bahwa sistem telah mendeteksi dan mengaktifkan fungsionalitas tertentu (seperti file system vfat atau dukungan virtualisasi kvm).
+makna dmesg | head 
+Laporan ini adalah log sejarah komunikasi antara perangkat keras dan Kernel sejak sistem dihidupkan (boot). Ini mencatat semua inisialisasi, deteksi perangkat keras (CPU, memori, disk), dan potensi kesalahan driver.
+
+- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
+- Secara keseluruhan, laporan dari keempat perintah ini menegaskan tiga poin fundamental:
+System Call sebagai Gerbang Eksklusif: Semua informasi yang ditampilkan (identitas, versi, log) bersifat privilege (berhak istimewa). Program ruang pengguna hanya dapat mengaksesnya melalui System Call yang diawasi Kernel. Ini menjamin keamanan dan konsistensi sistem.
+Kernel sebagai Manajer Tunggal: Hasil ini mendemonstrasikan fungsi utama Kernel:
+Identitas & Keamanan (whoami).
+Abstraksi Hardware (uname -a & dmesg).
+Manajemen Sumber Daya (I/O, CPU, Memori melalui lsmod dan dmesg).
+Arsitektur Monolitik yang Fleksibel: Laporan lsmod mengkonfirmasi bahwa meskipun Linux berakar pada arsitektur monolitik, ia menggunakan modularitas untuk efisiensi dan kemampuan live-patching, membuktikan desain yang menyeimbangkan kinerja dan fleksibilitas.
+
+- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
+- Perbedaan hasil dari perintah yang sama di lingkungan Linux (berbasis UNIX/POSIX) dan Windows terletak pada perbedaan fundamental dalam arsitektur OS, set System Call, dan implementasi Fungsi Kernel yang mendasarinya.
+Secara umum, Linux memberikan hasil yang mentah, teknis, dan berfokus pada kernel, sementara Windows (melalui perintah atau alat setara) memberikan hasil yang terstruktur, berfokus pada keamanan domain, dan lebih berorientasi pada pengguna akhir.
 
 ---
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+Kernel Adalah Bos Mutlak Sistem.
+Semua hasil perintah (versi Kernel dari uname -a, hak akses dari whoami, dan log boot dari dmesg) membuktikan bahwa Kernel adalah inti yang mengontrol segalanya. Aplikasi user harus melalui System Call untuk meminta izin Kernel, seperti meminta ID pengguna atau membaca driver yang sedang aktif.
 
+Linux Cepat Karena Fleksibilitasnya Cerdik.
+Arsitektur Linux menggunakan cara kerja Monolitik (semua fungsi inti bersama-sama agar cepat), namun ia pintar karena bisa memuat driver baru secara dinamis (Modul Kernel seperti yang dilihat di lsmod). Ini membuat sistem tetap cepat seperti Monolitik, tapi fleksibel seperti sistem modern, tanpa harus restart setiap saat.
+
+Setiap Tindakan Dilindungi oleh Aturan Akses.
+Hasil whoami dan log dmesg menunjukkan bahwa Fungsi Kernel bekerja keras menjaga sistem. Kernel menetapkan aturan: siapa Anda (whoami), apa yang boleh Anda lakukan, dan mencatat semua yang terjadi (dmesg). Ini adalah inti dari keamanan dan stabilitas sistem operasi.
 ---
 
 ## Quiz
@@ -71,7 +130,7 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?
 - Bagaimana cara Anda mengatasinya?  
 
 ---
