@@ -20,7 +20,6 @@ Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta s
 Pada praktikum minggu ini, mahasiswa akan mempelajari arsitektur dasar sistem operasi: bagaimana komponen OS bekerja, serta bagaimana interaksi antara user, aplikasi, kernel, dan hardware terjadi.
 
 Mahasiswa juga diperkenalkan pada:
-
 Perbedaan mode eksekusi kernel mode dan user mode.
 Mekanisme system call (panggilan sistem).
 Perbandingan model arsitektur OS seperti monolithic kernel, layered approach, dan microkernel.
@@ -76,7 +75,7 @@ dmesg | head
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](./sreenshot/Linux-1.png)
+![Screenshot hasil](./sreenshots/screenshots.terminal%20wsl.png.png)
 
 ---
 
@@ -114,25 +113,34 @@ Semua hasil perintah (versi Kernel dari uname -a, hak akses dari whoami, dan log
 Linux Cepat Karena Fleksibilitasnya Cerdik.
 Arsitektur Linux menggunakan cara kerja Monolitik (semua fungsi inti bersama-sama agar cepat), namun ia pintar karena bisa memuat driver baru secara dinamis (Modul Kernel seperti yang dilihat di lsmod). Ini membuat sistem tetap cepat seperti Monolitik, tapi fleksibel seperti sistem modern, tanpa harus restart setiap saat.
 
-Setiap Tindakan Dilindungi oleh Aturan Akses.
-Hasil whoami dan log dmesg menunjukkan bahwa Fungsi Kernel bekerja keras menjaga sistem. Kernel menetapkan aturan: siapa Anda (whoami), apa yang boleh Anda lakukan, dan mencatat semua yang terjadi (dmesg). Ini adalah inti dari keamanan dan stabilitas sistem operasi.
+
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Sebutkan tiga fungsi utama sistem operasi.
+   Manajemen Sumber Daya (Resource Management): OS bertanggung jawab untuk mengelola dan mengalokasikan sumber daya sistem seperti CPU (prosesor), memori, perangkat I/O (input/output), dan penyimpanan. Ini mencakup penjadwalan proses, alokasi memori, dan pengelolaan file agar program dapat berjalan secara efisien dan tidak saling mengganggu.
+
+   Antarmuka Pengguna (User Interface - UI): OS menyediakan cara bagi pengguna untuk berinteraksi dengan komputer. Ada dua jenis utama: Antarmuka Baris Perintah (Command-Line Interface - CLI) dan Antarmuka Grafis (Graphical User Interface - GUI).
+
+   Penyediaan Layanan (Service Provision): OS menyediakan layanan dasar bagi program aplikasi, seperti eksekusi program, operasi I/O, komunikasi antar-proses, dan deteksi/penanganan error.
+   
+2. Jelaskan perbedaan antara kernel mode dan user mode.
+
+   kernel mode adalah mode super power OS untuk mengendalikan perangkat keras, sedangkan user mode adalah mode sandbox di mana aplikasi berjalan dengan hak terbatas demi keamanan dan stabilitas sistem.
+
+3. Sebutkan contoh OS dengan arsitektur monolithic dan microkernel.
+
+   contoh os arsitektur monolithic yaitu linux, openBSD, freeBSD, netBSD.
+   contoh os microkernel yaitu Mach, QNX, Minix 3.
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?
+  bagian paling menantang minggu ini adalah tidak bisa download wsl di laptop.
 - Bagaimana cara Anda mengatasinya?  
-
+  tutorial youtube dan meminta teman untuk mengajarkan.
 ---
 
 **Credit:**  
