@@ -133,4 +133,4 @@ Bagian paling menantang adalah memahami alur scheduling SJF. Hal ini diatasi den
 ---
 
 **Credit:**  
-Template laporan praktikum Sistem Operasi – Universitas Putra Bangsa
+Template laporan praktikum Sistem Operasi – Universitas Putra Bangsa.
