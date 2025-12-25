@@ -1,13 +1,13 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu [11]
 Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Ikhsan Mu'arif  
+- **NIM**   : 250202921  
+- **Kelas** : 1IKRB
 
 ---
 
@@ -60,12 +60,10 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa perbedaan antara *deadlock prevention*, *avoidance*, dan *detection*?  
+2. Mengapa deteksi deadlock tetap diperlukan dalam sistem operasi?  
+3. Apa kelebihan dan kekurangan pendekatan deteksi deadlock?
+
 
 ---
 

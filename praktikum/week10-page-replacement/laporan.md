@@ -155,7 +155,7 @@ Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
  memahami konsep mwkanisme Page Replacement FIFO dan LRU.
 - Bagaimana cara Anda mengatasinya?  
- Mengerjakan tugas sambil memahami lewat google.
+ Mengerjakan tugas sambil memahami lewat google.  
 
 ---
 
