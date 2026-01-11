@@ -86,5 +86,6 @@ Berdasarkan hasil percobaan dan analisis yang telah dilakukan, dapat disimpulkan
 Penyebab utama terjadinya deadlock dalam percobaan ini adalah adanya pembentukan lingkaran tunggu, di mana proses-proses saling menunggu dalam permintaan sumber daya. Contohnya, P1 menunggu sumber daya yang dipegang oleh P2, P2 menunggu sumber daya yang dimiliki oleh P3, dan P3 menunggu sumber daya yang dipegang oleh P1. Situasi ini membuat sistem tidak bisa melanjutkan proses tanpa campur tangan dari luar.
 
 ## Daftar Pustaka
-Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). Operating System Concepts (10th ed.). Wiley.
+Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). Operating System Concepts (10th ed.). Wiley.  
+
 Tanenbaum, A. S., & Bos, H. (2015). Modern Operating Systems (4th ed.). Pearson.
