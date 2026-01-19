@@ -85,6 +85,15 @@ Berdasarkan hasil percobaan dan analisis yang telah dilakukan, dapat disimpulkan
 
 Penyebab utama terjadinya deadlock dalam percobaan ini adalah adanya pembentukan lingkaran tunggu, di mana proses-proses saling menunggu dalam permintaan sumber daya. Contohnya, P1 menunggu sumber daya yang dipegang oleh P2, P2 menunggu sumber daya yang dimiliki oleh P3, dan P3 menunggu sumber daya yang dipegang oleh P1. Situasi ini membuat sistem tidak bisa melanjutkan proses tanpa campur tangan dari luar.
 
+## quiz
+1. Mengapa format IMRAD membantu membuat laporan praktikum lebih ilmiah dan mudah dievaluasi?  
+Format IMRAD (Introduction, Methods, Results, and Discussion) membantu menyusun laporan praktikum secara sistematis dan terstruktur. Setiap bagian memiliki fungsi yang jelas: pendahuluan menjelaskan latar belakang dan tujuan, metode memaparkan langkah eksperimen, hasil menyajikan data, dan pembahasan menganalisis makna data tersebut.
+2. Apa perbedaan antara bagian **Hasil** dan **Pembahasan**?
+Bagian Hasil berfokus pada penyajian data atau output eksperimen secara objektif, seperti tabel, grafik, atau nilai perhitungan, tanpa interpretasi. bagian Pembahasan berisi analisis dan interpretasi hasil, termasuk penjelasan mengapa hasil tersebut terjadi, perbandingan dengan teori, dan kemungkinan penyebab perbedaan antara hasil praktikum dan teori.
+3. Mengapa sitasi dan daftar pustaka penting, bahkan untuk laporan praktikum?  
+Sitasi dan daftar pustaka penting karena menunjukkan bahwa laporan praktikum berdasarkan teori dan sumber ilmiah yang valid, bukan sekadar opini. sitasi membantu menghindari plagiarisme, memberikan penghargaan kepada penulis asli, serta memungkinkan pembaca untuk menelusuri kembali sumber referensi.
+
+
 ## Daftar Pustaka
 Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). Operating System Concepts (10th ed.). Wiley.  
 
